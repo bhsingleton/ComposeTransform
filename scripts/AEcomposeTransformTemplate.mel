@@ -1,0 +1,33 @@
+global proc AEcomposeTransformTemplate(string $nodeName)
+{
+
+	editorTemplate -beginScrollLayout;
+		
+		editorTemplate -beginLayout "Compose Transform Attributes" -collapse false;
+		
+			editorTemplate -addControl "inputTranslate";
+			editorTemplate -addControl "inputRotateOrder";
+			editorTemplate -addControl "inputRotate";
+			editorTemplate -addControl "inputRotatePivot";
+			editorTemplate -addControl "inputRotatePivotTranslate";
+			editorTemplate -addControl "inputRotateAxis";
+			editorTemplate -addControl "inputScale";
+			editorTemplate -addControl "inputScalePivot";
+			editorTemplate -addControl "inputScalePivotTranslate";
+			editorTemplate -addControl "inputShear";
+			editorTemplate -addControl "inputOffsetParentMatrix";
+
+		editorTemplate -endLayout;
+
+		editorTemplate -beginLayout "Output" -collapse false;
+			
+			editorTemplate -addControl "outputMatrix";
+		
+		editorTemplate -endLayout;
+		
+		AEdependNodeTemplate $nodeName;
+		editorTemplate -addExtraControls;
+
+	editorTemplate -endScrollLayout;
+
+}
